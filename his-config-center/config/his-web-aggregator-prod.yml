@@ -4,7 +4,7 @@ commonConfig:
 # tomcat 配置
 #server.address:
 server:
-      port: 7777
+      port: 30009
       displayName:  ${spring.application.name}
 # 日志配置
 logging:
@@ -85,7 +85,7 @@ async:
 
 # Configuration properties for OAuth2 Resources.
 oauth2:
-    server-host: http://localhost:9191/api
+    server-host: http://125.94.213.226:9191/api
 
 security:
     oauth2:
@@ -100,7 +100,7 @@ security:
 #ribbon config
 exampleService:
   ribbon:
-    listOfServers: http://localhost:9191
+    listOfServers: http://125.94.213.226:9191
 
 rebbon:
   httpclient:
