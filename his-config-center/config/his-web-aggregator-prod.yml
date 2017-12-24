@@ -4,7 +4,7 @@ commonConfig:
 # tomcat 配置
 #server.address:
 server:
-      port: 30009
+      port: 31111
       displayName:  ${spring.application.name}
 # 日志配置
 logging:
