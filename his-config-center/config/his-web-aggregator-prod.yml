@@ -100,7 +100,7 @@ security:
 #ribbon config
 exampleService:
   ribbon:
-    listOfServers: http://125.94.213.226:9191
+    listOfServers: http://125.94.213.226:30004
 
 rebbon:
   httpclient:
