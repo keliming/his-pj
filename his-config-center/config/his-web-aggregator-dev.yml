@@ -1,10 +1,12 @@
 commonConfig:
             appName: his-web-aggregator
 
+host:
+  url: 192.168.0.11
 # tomcat 配置
 #server.address:
 server:
-      port: 7777
+      port: 31111
       displayName:  ${spring.application.name}
 # 日志配置
 logging:
@@ -70,7 +72,7 @@ feign:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${eureka.host:localhost}:${eureka.port:1111}/eureka/
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:30002}/eureka/
 
 
 
@@ -85,7 +87,7 @@ async:
 
 # Configuration properties for OAuth2 Resources.
 oauth2:
-    server-host: http://125.94.213.226:30004/api
+    server-host: http://${host.url}:30004/api
 
 security:
     oauth2:
@@ -100,7 +102,7 @@ security:
 #ribbon config
 exampleService:
   ribbon:
-    listOfServers: http://125.94.213.226:30004
+    listOfServers: http://${host.url}:30004
 
 rebbon:
   httpclient:

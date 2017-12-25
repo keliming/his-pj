@@ -1,6 +1,7 @@
 commonConfig:
             appName: his-web-aggregator
-
+host:
+  url: 125.94.213.226
 # tomcat 配置
 #server.address:
 server:
@@ -85,7 +86,7 @@ async:
 
 # Configuration properties for OAuth2 Resources.
 oauth2:
-    server-host: http://125.94.213.226:30004/api
+    server-host: http://${host.url}:30004/api
 
 security:
     oauth2:
@@ -100,7 +101,7 @@ security:
 #ribbon config
 exampleService:
   ribbon:
-    listOfServers: http://125.94.213.226:30004
+    listOfServers: http://${host.url}:30004
 
 rebbon:
   httpclient:
