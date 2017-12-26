@@ -31,7 +31,7 @@ zuul:
     hflow:
       path: /hflow/**
       sensitiveHeaders:
-      serviceId: hflow
+      serviceId: his-activiti
     order:
       path: /order/**
       sensitiveHeaders:
