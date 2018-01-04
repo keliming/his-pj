@@ -69,7 +69,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${host.url}:30002/eureka/
-
   add-proxy-headers: true
 
 # 异步线程池配置
@@ -78,9 +77,6 @@ async:
     max-pool-size: 50
     queue-capacity: 10000
     namePrefix: spring-boot-practice
-
-
-
 # Configuration properties for OAuth2 Resources.
 oauth2:
     server-host: http://${host.url}:30004/api
@@ -94,16 +90,13 @@ security:
           tokenInfoUri:  ${oauth2.server-host}/oauth/check_token/
           userInfoUri: ${oauth2.server-host}/user
 
-
 #ribbon config
 exampleService:
   ribbon:
     listOfServers: http://${host.url}:30004
-
 rebbon:
   httpclient:
     enabled: true
-
 practice:
   oauth2:
     client:
