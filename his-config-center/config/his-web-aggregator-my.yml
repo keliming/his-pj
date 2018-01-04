@@ -37,40 +37,7 @@ eureka:
     serviceUrl:
       defaultZone: http://${host.url}:30002/eureka/
 
-zuul:
-  routes:
-    uaa:
-      path: /uaa/**
-      sensitiveHeaders:
-      serviceId: his-authorization
-    his-omp:
-      path: /his-omp/**
-      sensitiveHeaders:
-      serviceId: his-omp
-    hflow:
-      path: /hflow/**
-      sensitiveHeaders:
-      serviceId: his-activiti
-    order:
-      path: /order/**
-      sensitiveHeaders:
-      serviceId: order-service
-    search:
-      path: /search/**
-      sensitiveHeaders:
-      serviceId: his-search
-    aggregator:
-      path: /aggregator/**
-      sensitiveHeaders:
-      serviceId: his-web-aggregator
-    foundation:
-      path: /foundation/**
-      sensitiveHeaders:
-      serviceId: his-foundation
-    box:
-      path: /box/**
-      sensitiveHeaders:
-      serviceId: his-box
+
   add-proxy-headers: true
 
 # 异步线程池配置
