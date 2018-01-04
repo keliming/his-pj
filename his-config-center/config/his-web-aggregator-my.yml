@@ -43,37 +43,37 @@ zuul:
       path: /uaa/**
       sensitiveHeaders:
       serviceId: his-authorization
-      stripPrefix: true
+      stripPrefix: false
     his-omp:
       path: /his-omp/**
       sensitiveHeaders:
       serviceId: his-omp
-      stripPrefix: true
+      stripPrefix: false
     hflow:
       path: /hflow/**
       sensitiveHeaders:
       serviceId: his-activiti
-      stripPrefix: true
+      stripPrefix: false
     order:
       path: /order/**
       sensitiveHeaders:
       serviceId: order-service
-      stripPrefix: true
+      stripPrefix: false
     search:
       path: /search/**
       sensitiveHeaders:
       serviceId: his-search
-      stripPrefix: true
+      stripPrefix: false
     aggregator:
       path: /aggregator/**
       sensitiveHeaders:
       serviceId: his-web-aggregator
-      stripPrefix: true
+      stripPrefix: false
     foundation:
       path: /foundation/**
       sensitiveHeaders:
       serviceId: his-foundation
-      stripPrefix: true
+      stripPrefix: false
     box:
       path: /box/**
       sensitiveHeaders:
