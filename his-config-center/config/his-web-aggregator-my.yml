@@ -18,7 +18,12 @@ logging:
                 file: "${WHO}  %d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{60}   [%F:%L]: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
         level:
             root: info
-
+zuul:
+  routes:
+    uaa:
+      path: /uaa/**
+      sensitiveHeaders:
+      serviceId: his-authorization
 # JACKSON (JacksonProperties) json序列化和反序列化使用的日期格式
 spring:
     jackson:
