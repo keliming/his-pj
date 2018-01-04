@@ -100,7 +100,7 @@ spring:
     publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKE9YBMguFrtB/QK7Aqbqbcm2aW46E+86BrFLqZaB8k+RrWvfOTNYL9uA4mphSwc9+wzoS+N9P06lmqsTSB3TjMCAwEAAQ==
     filters: stat,wall,log4j,config
     poolPreparedStatements: true
-    url: jdbc:mysql://${host.ip}:3306/his?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://${host.url}:3306/his?useUnicode=true&characterEncoding=utf-8
     privateKey: MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEAoT1gEyC4Wu0H9ArsCpuptybZpbjoT7zoGsUuploHyT5Gta985M1gv24DiamFLBz37DOhL430/TqWaqxNIHdOMwIDAQABAkAOCxZvFA56fOKQctMUKXKirROPx4cUStO8YSgq/PRopoyC/UZnM+Gmq9q2eUmXCmXNnYORnWhZ+j60k1UJ32vhAiEA0H2GlNkPSXwBCGNPnDkEO38ETEb2LE8tgnety1oJYN8CIQDF+3F/+Vdv81jTk/aFXo5iAnleopWK/qnXL7fub5SZLQIhAJwIBWtqUwWE12UGpfLdvOwl7/qB9QROMVn95URV2sTzAiEAm42n68jY7ljgnbxPoRJeBJu1CKntnTvh7fTMK0b4FjECIGECgqaX9+4QvxfmXN4IBnIDelG8AuNgF0mRKvFb+dWh
     maxPoolPreparedStatementPerConnectionSize: 20
     password: 123456
