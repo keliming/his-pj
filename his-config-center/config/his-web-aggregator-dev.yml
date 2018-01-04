@@ -20,7 +20,10 @@ logging:
             root: info
 zuul:
   routes:
-
+    uaa:
+      path: /uaa/**
+      sensitiveHeaders:
+      serviceId: his-authorization
     his-omp:
       path: /his-omp/**
       sensitiveHeaders:
