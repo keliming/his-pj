@@ -3,6 +3,17 @@ commonConfig:
 
 host:
   url: 192.168.0.11
+
+management:
+  security:
+    enabled: false
+datasource:
+  type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+ribbon:
+  eureka:
+    enabled: true
 # tomcat 配置
 #server.address:
 server:
@@ -18,43 +29,6 @@ logging:
                 file: "${WHO}  %d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{60}   [%F:%L]: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
         level:
             root: info
-zuul:
-  routes:
-    uaa:
-      path: /uaa/**
-      sensitiveHeaders:
-      serviceId: his-authorization
-    his-omp:
-      path: /his-omp/**
-      sensitiveHeaders:
-      serviceId: his-omp
-    hflow:
-      path: /hflow/**
-      sensitiveHeaders:
-      serviceId: his-activiti
-    order:
-      path: /order/**
-      sensitiveHeaders:
-      serviceId: order-service
-    search:
-      path: /search/**
-      sensitiveHeaders:
-      serviceId: his-search
-    aggregator:
-      path: /aggregator/**
-      sensitiveHeaders:
-      serviceId: his-web-aggregator
-    foundation:
-      path: /foundation/**
-      sensitiveHeaders:
-      serviceId: his-foundation
-    box:
-      path: /box/**
-      sensitiveHeaders:
-      serviceId: his-box
-
-  add-proxy-headers: true
-
 # JACKSON (JacksonProperties) json序列化和反序列化使用的日期格式
 spring:
     jackson:
@@ -73,8 +47,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${host.url}:30002/eureka/
-
-
 
 # 异步线程池配置
 async:
