@@ -37,7 +37,12 @@ eureka:
     serviceUrl:
       defaultZone: http://${host.url}:30002/eureka/
 
-
+zuul:
+  routes:
+    box:
+      path: /box/**
+      sensitiveHeaders:
+      serviceId: his-box
   add-proxy-headers: true
 
 # 异步线程池配置
