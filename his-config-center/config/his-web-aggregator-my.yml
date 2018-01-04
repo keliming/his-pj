@@ -43,42 +43,34 @@ zuul:
       path: /uaa/**
       sensitiveHeaders:
       serviceId: his-authorization
-      stripPrefix: false
     his-omp:
       path: /his-omp/**
       sensitiveHeaders:
       serviceId: his-omp
-      stripPrefix: false
     hflow:
       path: /hflow/**
       sensitiveHeaders:
       serviceId: his-activiti
-      stripPrefix: false
     order:
       path: /order/**
       sensitiveHeaders:
       serviceId: order-service
-      stripPrefix: false
     search:
       path: /search/**
       sensitiveHeaders:
       serviceId: his-search
-      stripPrefix: false
     aggregator:
       path: /aggregator/**
       sensitiveHeaders:
       serviceId: his-web-aggregator
-      stripPrefix: false
     foundation:
       path: /foundation/**
       sensitiveHeaders:
       serviceId: his-foundation
-      stripPrefix: false
     box:
       path: /box/**
       sensitiveHeaders:
       serviceId: his-box
-      stripPrefix: false
   add-proxy-headers: true
 
 # 异步线程池配置
