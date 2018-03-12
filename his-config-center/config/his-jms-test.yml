@@ -1,5 +1,5 @@
 host:
-  url: 125.94.213.226
+  url: 192.168.0.200
 server:
   port: 30011
 spring:
