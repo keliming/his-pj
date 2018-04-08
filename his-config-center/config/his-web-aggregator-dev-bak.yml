@@ -1,0 +1,90 @@
+commonConfig:
+            appName: his-web-aggregator
+
+host:
+  url: 192.168.0.11
+
+management:
+  security:
+    enabled: false
+datasource:
+  type: com.alibaba.druid.pool.DruidDataSource
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+ribbon:
+  eureka:
+    enabled: true
+# tomcat 配置
+#server.address:
+server:
+      port: 31111
+      displayName:  ${spring.application.name}
+# 日志配置
+logging:
+        file: ${commonConfig.appName}.log
+        path: ./
+        pattern:
+                console: "-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint}  [%F:%L]  %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"
+
+                file: "${WHO}  %d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{60}   [%F:%L]: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
+        level:
+            root: info
+# JACKSON (JacksonProperties) json序列化和反序列化使用的日期格式
+spring:
+    jackson:
+          date-format:  yyyy-MM-dd'T'HH:mm
+          joda-date-time-format:  yyyy-MM-dd'T'HH:mm
+          time-zone:  GMT+8
+          serialization:
+                      WRITE_DATES_AS_TIMESTAMPS:  false
+    application:
+      name: ${commonConfig.appName}
+
+feign:
+  httpclient:
+    enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${host.url}:30002/eureka/
+
+# 异步线程池配置
+async:
+    core-pool-size: 2
+    max-pool-size: 50
+    queue-capacity: 10000
+    namePrefix: spring-boot-practice
+
+
+
+# Configuration properties for OAuth2 Resources.
+oauth2:
+    server-host: http://${host.url}:30004/api
+
+security:
+    oauth2:
+      resource:
+          id: res_apptem
+          clientId: $2a$10$XOVs4Z1YtPKqKwQVywG9j.xLAqXYRQLGZMGMrZDNbtl6pUC0Weteq
+          clientSecret: $2a$10$XOVs4Z1YtPKqKwQVywG9j.xLAqXYRQLGZMGMrZDNbtl6pUC0Weteq
+          tokenInfoUri:  ${oauth2.server-host}/oauth/check_token/
+          userInfoUri: ${oauth2.server-host}/user
+
+
+#ribbon config
+exampleService:
+  ribbon:
+    listOfServers: http://${host.url}:30004
+
+rebbon:
+  httpclient:
+    enabled: true
+
+practice:
+  oauth2:
+    client:
+      id: ${security.oauth2.resource.id}
+      accessTokenUrl: ${oauth2.server-host}/oauth/token
+      clientId: ${security.oauth2.resource.clientId}
+      clientSecret: ${security.oauth2.resource.clientSecret}
+      clientAuthenticationScheme: header
